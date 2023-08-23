@@ -55,7 +55,8 @@ public class AppConfig {
 						"http://localhost:3000",
 						"http://localhost:4200",
 						"http://localhost:8080",
-						"https://ecommerce-spring-reactjs.vercel.app"
+						"https://ecommerce-spring-reactjs.vercel.app",
+						"https://ecommerce-spring1-production.up.railway.app"
 				));
 				cfg.setAllowedMethods(Collections.singletonList("*"));
 				cfg.setAllowCredentials(true);
