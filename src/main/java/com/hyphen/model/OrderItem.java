@@ -1,0 +1,176 @@
+package com.hyphen.model;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+
+@Entity
+public class OrderItem {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	@JsonIgnore
+	@ManyToOne
+	private Orders orders;
+
+	@ManyToOne
+	private Product product;
+
+	private String size;
+
+	private int quantity;
+
+	private Integer price;
+
+	private Integer discountedPrice;
+
+	private Long userId;
+
+	private LocalDate deliveryDate;
+
+	private LocalDateTime createdAt;
+
+	private Long createdBy;
+
+	private LocalDateTime updatedAt;
+
+	private Long updatedBy;
+
+	public OrderItem() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public OrderItem(Long id, Orders orders, Product product, String size, int quantity, Integer price,
+			Integer discountedPrice, Long userId, LocalDate deliveryDate, LocalDateTime createdAt, Long createdBy,
+			LocalDateTime updatedAt, Long updatedBy) {
+		super();
+		this.id = id;
+		this.orders = orders;
+		this.product = product;
+		this.size = size;
+		this.quantity = quantity;
+		this.price = price;
+		this.discountedPrice = discountedPrice;
+		this.userId = userId;
+		this.deliveryDate = deliveryDate;
+		this.createdAt = createdAt;
+		this.createdBy = createdBy;
+		this.updatedAt = updatedAt;
+		this.updatedBy = updatedBy;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Orders getOrder() {
+		return orders;
+	}
+
+	public void setOrder(Orders orders) {
+		this.orders = orders;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+	public String getSize() {
+		return size;
+	}
+
+	public void setSize(String size) {
+		this.size = size;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public Integer getPrice() {
+		return price;
+	}
+
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+
+	public Integer getDiscountedPrice() {
+		return discountedPrice;
+	}
+
+	public void setDiscountedPrice(Integer discountedPrice) {
+		this.discountedPrice = discountedPrice;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	public LocalDate getDeliveryDate() {
+		return deliveryDate;
+	}
+
+	public void setDeliveryDate(LocalDate deliveryDate) {
+		this.deliveryDate = deliveryDate;
+	}
+
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Long getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(Long createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public LocalDateTime getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(LocalDateTime updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public Long getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(Long updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+}
